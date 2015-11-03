@@ -1,0 +1,68 @@
+html,body {
+    max-height:100vh;
+}
+
+.virtual-scroll {
+    height:calc(100vh - 64px);
+    overflow-y: scroll;
+}
+
+.author-tag {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    padding: 3px 5px;
+}
+
+@media screen and (max-width:600px) {
+    .virtual-scroll {
+        height:calc(100vh - 232px);
+        overflow-y: scroll;
+    }
+}
+
+.title {
+    font-size:1.5em;
+    font-weight:100;
+    text-shadow:1px 1px 4px #333;
+}
+
+.message {
+    padding:10px
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.bottom-left {
+    position: absolute;
+    right:0;
+    bottom:0;
+}
+
+.bottom-right {
+    position: absolute;
+    left:0;
+    bottom:0;
+}
+
+.avatar-container {
+    margin: 5px -5px;
+    max-height: 100%;
+}
+
+.flex {
+    display:flex;
+}
+
+.lightweight {
+    font-weight: 100;
+}
+.heavyweight {
+    font-weight: 900;
+}
+
+.message {
+    padding: 7.5px !important;
+}
