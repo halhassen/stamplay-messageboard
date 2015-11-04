@@ -6,7 +6,7 @@ var user = new Stamplay.User().Model;
 
 // Login Button Event Listner, init Github Login OAuth on "click"
 $('#login-button').on('click',function(){
-	user.login('github');
+  user.login('github');
 })
 
 $('#logout-button').on('click', function() {
@@ -52,18 +52,18 @@ var feed = new Stamplay.Cobject('message').Collection;
   		msg.instance.date = d.toLocaleString('en-EN').split(",").join("-");
   		elemStr += "<blockquote class='animated slideInRight col s12 z-depth-2 flex grey lighten-3 message'>"
   		elemStr += "<div class='col l2 s3 valign-wrapper'>";
-  		elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.instance.avatar + "'>";
+  		elemStr += "<a href='https://github.com/" + msg.instance.username + "'><img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.instance.avatar + "'></a>";
   		elemStr += "</div>";
   		elemStr += "<div class='col l10 s9 valign-wrapper'>";
   		elemStr += "<div class='valign'>";
-  		elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.instance.comment + "<b>  - " +  msg.instance.username + "</b>" + "</div>";
+  		elemStr += "<div class='grey-text text-darken-2 lightweight'>" + msg.instance.comment + "<b>  - <a href='https://github.com/" + msg.instance.username + "'>" +  msg.instance.username + "</a></b>" + "</div>";
   		elemStr += "<small>" + msg.instance.date + "</small>";
   		elemStr += "</div>";
   		elemStr += "</div>";
   		elemStr += "</blockquote>";
   		$("#output").append(elemStr);
   	})
-  });
+});
 
 // Create a Pusher Instance
 var pusher = new Pusher('cd6c2b7d26a01ebb5ca4');
@@ -78,7 +78,7 @@ channel.bind('message', function(msg) {
     msg.date = d.toLocaleString('en-EN').split(",").join("-");
     elemStr += "<blockquote class='animated bounceIn col s12 z-depth-2 flex grey lighten-3 message'>"
     elemStr += "<div class='col l2 s3 valign-wrapper'>";
-    elemStr += "<img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.avatar + "'>";
+    elemStr += "<a href='https://github.com/" + msg.username + "'><img class='responsive-img valign z-depth-1 circle avatar-container' src='" + msg.avatar + "'></a>";
     elemStr += "</div>";
     elemStr += "<div class='col l10 s9 valign-wrapper'>";
     elemStr += "<div class='valign'>";
